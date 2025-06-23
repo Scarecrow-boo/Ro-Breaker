@@ -1,0 +1,17 @@
+loadstring([[
+    local scripts = {
+        [1234567890] = "https://example.com/script1.lua",
+        [9876543210] = "https://example.com/script2.lua"
+    }
+
+    local currentId = game.PlaceId
+    local scriptUrl = scripts[currentId]
+
+    if scriptUrl then
+        print("✅ Game supported found load in 1...)
+        loadstring(game:HttpGet(scriptUrl))()
+    else
+        warn("🚫 Game not supported?)
+        game:Shutdown()
+    end
+]])()
